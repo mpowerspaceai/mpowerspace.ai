@@ -1,0 +1,48 @@
+{
+  "Navigation": {
+    "features": "Caracteristici",
+    "architecture": "Arhitectură",
+    "wallet": "Portofel",
+    "downloadApp": "Descarcă Aplicația",
+    "language": "Română",
+    "about": "Despre",
+    "contact": "Contact",
+    "blog": "Blog",
+    "recharge": "Reîncărcare"
+  },
+  "Hero": {
+    "badge": "Criptare Apeluri de Grad Militar",
+    "titlePart1": "Efectuați Apeluri Internaționale",
+    "titlePart2": "Sub Criptare Totală",
+    "description": "Apelați liber din orice parte a lumii folosind propriul număr de telefon. Mpower Space vă criptează conexiunea vocală de la un capăt la altul, făcând matematic imposibil ca oricine—guverne, furnizori de internet sau hackeri—să vă spioneze apelurile.",
+    "ctaPrimary": "Obțineți Mpower Space",
+    "ctaSecondary": "Cum Funcționează"
+  },
+  "Features": {
+    "title": "Criptare Vocală Inviolabilă",
+    "description": "Nu doar conectăm apelurile; le protejăm. Vocea dvs. este criptată din momentul în care vorbiți până în momentul în care este auzită.",
+    "f1Title": "Apeluri Globale Anti-Spionaj",
+    "f1Desc": "Efectuați apeluri libere către orice zonă din lume. Criptarea noastră de grad militar asigură intimitate absolută împotriva oricărei forme de interceptare sau supraveghere.",
+    "f2Title": "Folosiți Propriul Număr",
+    "f2Desc": "Păstrați-vă identitatea. Efectuați apeluri internaționale complet criptate folosind același număr de telefon, dar sub umbrela noastră de securitate impenetrabilă.",
+    "f3Title": "Ca un VPN pentru Voce",
+    "f3Desc": "La fel cum un VPN vă ascunde traficul de internet, Mpower Space vă criptează apelurile telefonice obișnuite, făcându-le invizibile pentru furnizorii de telecomunicații și hackeri.",
+    "f4Title": "Arhitectură Zero-Compute",
+    "f4Desc": "Infrastructura noastră descentralizată genială rutează apelurile dvs. criptate peer-to-peer fără a vă stoca datele vocale pe servere centrale.",
+    "f5Title": "Portofel Inteligent Integrat",
+    "f5Desc": "Gestionați fondurile companiei și reîncărcați credite instantaneu pentru a efectua apeluri internaționale criptate nelimitate la o fracțiune din cost.",
+    "f6Title": "Securitate Biometrică",
+    "f6Desc": "Recunoaștere facială și a amprentelor digitale de ultimă generație pentru a proteja accesul la cel mai sensibil centru de comunicații."
+  },
+  "CTA": {
+    "title": "Gata să vă recuperați confidențialitatea?",
+    "description": "Alăturați-vă liderilor vizionari care au încredere în Mpower Space pentru a efectua apeluri internaționale gratuite și imposibil de spionat.",
+    "button": "Descărcați Acum"
+  },
+  "Footer": {
+    "copyright": "© 2026 Mpower Space. Toate drepturile rezervate.",
+    "privacy": "Politica de Confidențialitate",
+    "terms": "Termeni de Utilizare",
+    "support": "Contactați Suportul"
+  }
+}

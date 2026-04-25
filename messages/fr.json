@@ -1,0 +1,48 @@
+{
+  "Navigation": {
+    "features": "Fonctionnalités",
+    "architecture": "Architecture",
+    "wallet": "Portefeuille",
+    "downloadApp": "Télécharger l'application",
+    "language": "Français",
+    "about": "À propos",
+    "contact": "Contact",
+    "blog": "Blog",
+    "recharge": "Recharger"
+  },
+  "Hero": {
+    "badge": "Cryptage d'appels de niveau militaire",
+    "titlePart1": "Passez des appels internationaux",
+    "titlePart2": "Sous cryptage total",
+    "description": "Appelez librement de n'importe où dans le monde en utilisant votre propre numéro de téléphone. Mpower Space crypte votre connexion vocale de bout en bout, rendant mathématiquement impossible pour quiconque de vous espionner.",
+    "ctaPrimary": "Obtenir Mpower Space",
+    "ctaSecondary": "Comment ça marche"
+  },
+  "Features": {
+    "title": "Cryptage vocal incassable",
+    "description": "Nous ne connectons pas seulement les appels; nous les protégeons. Votre voix est cryptée du moment où vous parlez jusqu'au moment où elle est entendue.",
+    "f1Title": "Appels mondiaux anti-espionnage",
+    "f1Desc": "Passez des appels librement vers n'importe quelle région du monde. Notre cryptage de niveau militaire garantit une confidentialité absolue contre toute forme d'écoute ou de surveillance.",
+    "f2Title": "Utilisez votre propre numéro",
+    "f2Desc": "Gardez votre identité. Passez des appels internationaux entièrement cryptés en utilisant exactement le même numéro de téléphone.",
+    "f3Title": "Comme un VPN pour la voix",
+    "f3Desc": "Tout comme un VPN cache votre trafic Internet, Mpower Space crypte vos appels téléphoniques réguliers, les rendant invisibles pour les fournisseurs de télécommunications et les pirates.",
+    "f4Title": "Architecture Zéro-Compute",
+    "f4Desc": "Notre infrastructure décentralisée géniale achemine vos appels cryptés d'égal à égal sans stocker vos données vocales sur des serveurs centraux.",
+    "f5Title": "Portefeuille intelligent intégré",
+    "f5Desc": "Gérez vos fonds d'entreprise et rechargez vos crédits instantanément pour passer des appels internationaux cryptés illimités.",
+    "f6Title": "Sécurité biométrique",
+    "f6Desc": "Reconnaissance faciale et des empreintes digitales de nouvelle génération pour protéger l'accès à vos communications."
+  },
+  "CTA": {
+    "title": "Prêt à récupérer votre vie privée?",
+    "description": "Rejoignez les leaders visionnaires qui font confiance à Mpower Space.",
+    "button": "Télécharger maintenant"
+  },
+  "Footer": {
+    "copyright": "© 2026 Mpower Space. Tous droits réservés.",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
+    "support": "Contacter le support"
+  }
+}

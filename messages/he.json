@@ -1,0 +1,50 @@
+{
+  "Navigation": {
+    "features": "Features",
+    "architecture": "Architecture",
+    "wallet": "Wallet",
+    "downloadApp": "Download App",
+    "language": "العربية",
+    "about": "About Us",
+    "contact": "Contact Us",
+    "blog": "Blog",
+    "recharge": "Recharge",
+    "pricing": "Pricing",
+    "dashboard": "Dashboard"
+  },
+  "Hero": {
+    "badge": "100% Anti-Spy Call Encryption",
+    "titlePart1": "Make International Calls",
+    "titlePart2": "Under Total Encryption",
+    "description": "Call freely from anywhere in the world using your own phone number. Mpower Space encrypts your voice connection end-to-end, making it mathematically impossible for anyone—governments, ISPs, or hackers—to spy on your calls.",
+    "ctaPrimary": "Get Mpower Space",
+    "ctaSecondary": "How It Works"
+  },
+  "Features": {
+    "title": "Unbreakable Voice Encryption",
+    "description": "We don't just connect calls; we shield them. Your voice is encrypted from the moment you speak until the moment it's heard.",
+    "f1Title": "Global Anti-Spy Calls",
+    "f1Desc": "Make calls freely to any area in the world. Our military-grade encryption ensures absolute privacy against any form of eavesdropping or surveillance.",
+    "f2Title": "Use Your Own Number",
+    "f2Desc": "Keep your identity. Make fully encrypted international calls using your exact same phone number, but under our impenetrable security umbrella.",
+    "f3Title": "Like a VPN for Voice",
+    "f3Desc": "Just as a VPN hides your internet traffic, Mpower Space encrypts your regular phone calls, making them invisible to telecom providers and hackers.",
+    "f4Title": "Zero-Compute Architecture",
+    "f4Desc": "Our genius decentralized infrastructure routes your encrypted calls peer-to-peer without storing your voice data on any central servers.",
+    "f5Title": "Integrated Smart Wallet",
+    "f5Desc": "Manage your enterprise funds and top-up credits instantly to make unlimited encrypted international calls at a fraction of the cost.",
+    "f6Title": "Biometric Security",
+    "f6Desc": "Next-generation facial and fingerprint recognition safeguarding access to your most sensitive communication hub."
+  },
+  "CTA": {
+    "title": "Ready to reclaim your privacy?",
+    "description": "Join visionary leaders who trust Mpower Space to make free, un-spyable international calls.",
+    "button": "Download Now"
+  },
+  "Footer": {
+    "copyright": "© 2026 Mpower Space. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "support": "Contact Support"
+  }
+}

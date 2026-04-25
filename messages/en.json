@@ -1,0 +1,73 @@
+{
+  "Navigation": {
+    "features": "Features",
+    "architecture": "Architecture",
+    "wallet": "Wallet",
+    "downloadApp": "Download App",
+    "language": "العربية",
+    "about": "About Us",
+    "contact": "Contact Us",
+    "blog": "Blog",
+    "recharge": "Recharge",
+    "pricing": "Pricing",
+    "dashboard": "Dashboard"
+  },
+  "Hero": {
+    "badge": "100% Anti-Spy Call Encryption",
+    "titlePart1": "Make International Calls",
+    "titlePart2": "Under Total Encryption",
+    "description": "Call freely from anywhere in the world using your own phone number. Mpower Space encrypts your voice connection end-to-end, making it mathematically impossible for anyone—governments, ISPs, or hackers—to spy on your calls.",
+    "ctaPrimary": "Get Mpower Space",
+    "ctaSecondary": "How It Works"
+  },
+  "Architecture": {
+    "badge": "Zero-Compute Local Architecture",
+    "titlePart1": "We Rebuilt Communication",
+    "titlePart2": "From The Ground Up.",
+    "desc1": "Traditional networks route your voice through centralized servers, creating massive vulnerabilities for surveillance. Our proprietary Zero-Compute Local Architecture ensures your encrypted calls are routed directly from peer to peer.",
+    "desc2": "We store nothing. We track nothing. Your device does the heavy lifting, acting as an impenetrable VPN for your voice.",
+    "link": "Read the full architecture whitepaper",
+    "noServerTitle": "No Central Servers",
+    "noServerDesc": "Traditional communication platforms route your calls through centralized servers, creating a single point of failure and a massive target for surveillance. Our architecture removes the server entirely. Your device connects directly to the recipient.",
+    "localKeyTitle": "Local Encryption Keys",
+    "localKeyDesc": "Encryption keys are generated locally on your hardware. We never transmit keys across our network, making it mathematically impossible for us (or anyone else) to decrypt your voice traffic in transit."
+  },
+  "Features": {
+    "title": "Unbreakable Voice Encryption",
+    "description": "We don't just connect calls; we shield them. Your voice is encrypted from the moment you speak until the moment it's heard.",
+    "f1Title": "Global Anti-Spy Calls",
+    "f1Desc": "Make calls freely to any area in the world. Our military-grade encryption ensures absolute privacy against any form of eavesdropping or surveillance.",
+    "f2Title": "Use Your Own Number",
+    "f2Desc": "Keep your identity. Make fully encrypted international calls using your exact same phone number, but under our impenetrable security umbrella.",
+    "f3Title": "Like a VPN for Voice",
+    "f3Desc": "Just as a VPN hides your internet traffic, Mpower Space encrypts your regular phone calls, making them invisible to telecom providers and hackers.",
+    "f4Title": "Zero-Compute Architecture",
+    "f4Desc": "Our genius decentralized infrastructure routes your encrypted calls peer-to-peer without storing your voice data on any central servers.",
+    "f5Title": "Integrated Smart Wallet",
+    "f5Desc": "Manage your enterprise funds and top-up credits instantly to make unlimited encrypted international calls at a fraction of the cost.",
+    "f6Title": "Biometric Security",
+    "f6Desc": "Next-generation facial and fingerprint recognition safeguarding access to your most sensitive communication hub."
+  },
+  "CTA": {
+    "title": "Ready to reclaim your privacy?",
+    "description": "Join visionary leaders who trust Mpower Space to make free, un-spyable international calls.",
+    "button": "Download Now"
+  },
+  "Footer": {
+    "copyright": "© 2026 Mpower Space. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "support": "Contact Support"
+  },
+  "Recharge": {
+    "badge": "Secure Recharge",
+    "title1": "Refill Your",
+    "title2": "Balance",
+    "desc": "Add funds to your encrypted account to make unlimited secure international calls.",
+    "select": "Select Amount",
+    "custom": "Custom Amount",
+    "customPlaceholder": "Enter amount",
+    "button": "Recharge Now",
+    "secure": "End-to-end encrypted payments. We do not store your card details."
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "Navigation": {
+    "features": "Recursos",
+    "architecture": "Arquitetura",
+    "wallet": "Carteira",
+    "downloadApp": "Baixar App",
+    "language": "Português",
+    "about": "Sobre",
+    "contact": "Contato",
+    "blog": "Blog",
+    "recharge": "Recarregar"
+  },
+  "Hero": {
+    "badge": "Criptografia de Chamadas de Grau Militar",
+    "titlePart1": "Faça Chamadas Internacionais",
+    "titlePart2": "Sob Criptografia Total",
+    "description": "Ligue livremente de qualquer lugar do mundo usando seu próprio número de telefone. O Mpower Space criptografa sua conexão de voz de ponta a ponta, tornando matematicamente impossível que qualquer pessoa - governos, provedores de internet ou hackers - espione suas chamadas.",
+    "ctaPrimary": "Obter Mpower Space",
+    "ctaSecondary": "Como Funciona"
+  },
+  "Features": {
+    "title": "Criptografia de Voz Inquebrável",
+    "description": "Nós não apenas conectamos chamadas; nós as protegemos. Sua voz é criptografada desde o momento em que você fala até o momento em que é ouvida.",
+    "f1Title": "Chamadas Globais Anti-Espionagem",
+    "f1Desc": "Faça chamadas livremente para qualquer área do mundo. Nossa criptografia de grau militar garante privacidade absoluta contra qualquer forma de escuta ou vigilância.",
+    "f2Title": "Use Seu Próprio Número",
+    "f2Desc": "Mantenha sua identidade. Faça chamadas internacionais totalmente criptografadas usando exatamente o mesmo número de telefone, mas sob nosso impenetrável guarda-chuva de segurança.",
+    "f3Title": "Como uma VPN para Voz",
+    "f3Desc": "Assim como uma VPN oculta seu tráfego de internet, o Mpower Space criptografa suas chamadas telefônicas regulares, tornando-as invisíveis para provedores de telecomunicações e hackers.",
+    "f4Title": "Arquitetura Zero-Compute",
+    "f4Desc": "Nossa genial infraestrutura descentralizada roteia suas chamadas criptografadas peer-to-peer sem armazenar seus dados de voz em servidores centrais.",
+    "f5Title": "Carteira Inteligente Integrada",
+    "f5Desc": "Gerencie seus fundos corporativos e recarregue créditos instantaneamente para fazer chamadas internacionais criptografadas ilimitadas por uma fração do custo.",
+    "f6Title": "Segurança Biométrica",
+    "f6Desc": "Reconhecimento facial e de impressões digitais de última geração para proteger o acesso ao seu centro de comunicações mais sensível."
+  },
+  "CTA": {
+    "title": "Pronto para recuperar sua privacidade?",
+    "description": "Junte-se a líderes visionários que confiam no Mpower Space para fazer chamadas internacionais gratuitas e livres de espionagem.",
+    "button": "Baixar Agora"
+  },
+  "Footer": {
+    "copyright": "© 2026 Mpower Space. Todos os direitos reservados.",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Serviço",
+    "support": "Contatar Suporte"
+  }
+}

@@ -1,0 +1,69 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id               String   @id @default(cuid())
+  email            String   @unique
+  name             String?
+  phone            String?  @unique
+  
+  // Client Info
+  balance          Float    @default(0.0)
+  lastActive       DateTime?
+  lastLocation     String?  // e.g., "Dubai, UAE" or IP-based
+  deviceInfo       String?  // e.g., "iPhone 15 Pro Max"
+  status           String   @default("Active") // Active, Blocked, Suspended
+  
+  // Affiliate Tracking
+  affiliateId      String?  // The FirstPromoter ref_id that brought this user
+  isAffiliate      Boolean  @default(false)
+  firstPromoterId  String?  // The internal FirstPromoter ID if this user becomes an affiliate
+  
+  // Standard timestamps
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  
+  payments         Payment[]
+  callLogs         CallLog[]
+}
+
+model CallLog {
+  id               String   @id @default(cuid())
+  userId           String
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  callerId         String?  // The actual number making the call
+  callUuid         String?  @unique // Unique ID from FusionPBX
+  destination      String?  // The actual number dialed
+  durationSeconds  Int      @default(0)
+  cost             Float    @default(0.0)
+  
+  // Security & Compliance (Hidden from clients)
+  hasRecording     Boolean  @default(false)
+  recordingUrl     String?  // Secure URL to the audio file (S3/R2 or FusionPBX path)
+  transcription    String?  // Optional: Auto-generated text summary for keyword flagging
+  flagged          Boolean  @default(false) // If flagged by automated security systems
+  
+  startedAt        DateTime @default(now())
+  endedAt          DateTime?
+}
+
+model Payment {
+  id               String   @id @default(cuid())
+  userId           String
+  user             User     @relation(fields: [userId], references: [id])
+  
+  amount           Int      // Stored in cents
+  currency         String   @default("USD")
+  status           String   // 'succeeded', 'failed', 'pending'
+  transactionId    String?  @unique
+  
+  createdAt        DateTime @default(now())
+}
