@@ -1,0 +1,23 @@
+{
+  "short_name": "MPower Space",
+  "name": "MPower Space",
+  "description": "100% Anti-Spy Call Encryption",
+  "icons": [
+    {
+      "src": "/app/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/app/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/app/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "orientation": "portrait",
+  "scope": "/app/"
+}
