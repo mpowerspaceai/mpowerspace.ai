@@ -35,7 +35,6 @@ export default function Navbar() {
       {/* Navbar */}
       <nav className="fixed top-0 w-full flex items-center justify-between px-6 py-4 border-b border-[#222] bg-black/80 backdrop-blur-md z-50">
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity z-[60]">
-          <Image src="/logo.png" alt="Mpower Space Logo" width={32} height={32} className="object-contain" />
           <span className="text-xl font-semibold tracking-tight">
             <span className="text-[#cca900]">M</span>Power Space
           </span>
