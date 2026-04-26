@@ -23,6 +23,11 @@ export const metadata: Metadata = {
   title: "Mpower Space | 100% Anti-Spy Call Encryption",
   description: "Call freely from anywhere in the world using your own phone number under total encryption. Mpower Space offers military-grade voice encryption and zero-compute architecture.",
   keywords: ["Mpower Space", "call encryption", "secure calls", "anti-spy phone calls", "WebRTC calls", "enterprise communication", "crypto wallet", "zero-compute architecture", "VPN for voice"],
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
   openGraph: {
     title: "Mpower Space | 100% Anti-Spy Call Encryption",
     description: "Call freely from anywhere in the world using your own phone number under total encryption. Mpower Space offers military-grade voice encryption.",
