@@ -34,7 +34,7 @@ export default function Navbar() {
     <>
       {/* Navbar */}
       <nav className="fixed top-0 w-full flex items-center justify-between px-6 py-4 border-b border-[#222] bg-black/80 backdrop-blur-md z-50">
-        <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+        <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity z-[60]">
           <Image src="/logo.png" alt="Mpower Space Logo" width={32} height={32} className="object-contain" />
           <span className="text-xl font-semibold tracking-tight">
             <span className="text-[#cca900]">M</span>Power Space
@@ -65,9 +65,9 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 z-[60]">
           <button 
-            className="md:hidden flex items-center justify-center text-white p-2 z-50 bg-[#111] rounded-lg border border-[#333] hover:border-[#cca900] transition-colors"
+            className="md:hidden flex items-center justify-center text-white p-2 bg-[#111] rounded-lg border border-[#333] hover:border-[#cca900] transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
