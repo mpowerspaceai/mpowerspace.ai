@@ -567,7 +567,7 @@ export default function AdminDashboard() {
           <div className="animate-in fade-in duration-300">
             <div className="bg-[#050505] border border-[#1a1a1a] rounded-xl overflow-hidden shadow-2xl h-[850px] relative w-full">
               <iframe 
-                src="https://calls.mpowerspace.ai/mpower_sso.php?token=mpower_god_mode_2024&redirect=/core/dashboard/" 
+                src={`https://calls.mpowerspace.ai/mpower_sso.php?token=mpower_god_mode_2024&redirect=/core/dashboard/&t=${Date.now()}`} 
                 className="w-full h-full border-none absolute inset-0"
                 title="FusionPBX Dashboard"
               />
@@ -579,7 +579,7 @@ export default function AdminDashboard() {
           <div className="animate-in fade-in duration-300">
             <div className="bg-[#050505] border border-[#1a1a1a] rounded-xl overflow-hidden shadow-2xl h-[850px] relative w-full">
               <iframe 
-                src="https://calls.mpowerspace.ai/mpower_sso.php?token=mpower_god_mode_2024&redirect=/app/extensions/extensions.php" 
+                src={`https://calls.mpowerspace.ai/mpower_sso.php?token=mpower_god_mode_2024&redirect=/app/extensions/extensions.php&t=${Date.now()}`} 
                 className="w-full h-full border-none absolute inset-0"
                 title="FusionPBX Extensions"
               />
@@ -591,7 +591,7 @@ export default function AdminDashboard() {
             <div className="animate-in fade-in duration-300">
               <div className="bg-[#050505] border border-[#1a1a1a] rounded-xl overflow-hidden shadow-2xl h-[850px] relative w-full">
                 <iframe 
-                  src="https://calls.mpowerspace.ai/mpower_sso.php?token=mpower_god_mode_2024&redirect=/core/users/users.php" 
+                  src={`https://calls.mpowerspace.ai/mpower_sso.php?token=mpower_god_mode_2024&redirect=/core/users/users.php&t=${Date.now()}`} 
                   className="w-full h-full border-none absolute inset-0"
                   title="FusionPBX Users"
                 />
@@ -603,7 +603,7 @@ export default function AdminDashboard() {
             <div className="animate-in fade-in duration-300">
               <div className="bg-[#050505] border border-[#1a1a1a] rounded-xl overflow-hidden shadow-2xl h-[850px] relative w-full">
                 <iframe 
-                  src="https://calls.mpowerspace.ai/mpower_sso.php?token=mpower_god_mode_2024&redirect=/app/calls_active/calls_active.php" 
+                  src={`https://calls.mpowerspace.ai/mpower_sso.php?token=mpower_god_mode_2024&redirect=/app/calls_active/calls_active.php&t=${Date.now()}`} 
                   className="w-full h-full border-none absolute inset-0"
                   title="FusionPBX Active Calls"
                 />
