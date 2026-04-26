@@ -8,6 +8,7 @@ export default function RechargePage() {
   const t = useTranslations('Recharge');
   const [amount, setAmount] = useState<string>("50");
   const [customAmount, setCustomAmount] = useState<string>("");
+  const [coupon, setCoupon] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
 
   const handlePayment = async () => {
@@ -17,7 +18,7 @@ export default function RechargePage() {
       const res = await fetch('/api/payment/mollie', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ amount })
+        body: JSON.stringify({ amount, coupon: coupon.trim() })
       });
       const data = await res.json();
       
@@ -81,6 +82,24 @@ export default function RechargePage() {
                   className="w-full bg-[#111] border border-[#333] rounded-xl pl-10 pr-4 py-4 text-white focus:outline-none focus:border-[#cca900] transition-colors font-bold text-lg"
                 />
               </div>
+            </div>
+
+            <div className="mb-8">
+              <label className="block text-sm font-semibold text-gray-400 mb-2">Coupon Code (Optional)</label>
+              <div className="relative">
+                <input 
+                  type="text" 
+                  placeholder="Enter VIP Coupon"
+                  value={coupon}
+                  onChange={(e) => setCoupon(e.target.value.toUpperCase())}
+                  className="w-full bg-[#111] border border-[#333] rounded-xl px-4 py-4 text-[#cca900] focus:outline-none focus:border-[#cca900] transition-colors font-bold text-lg tracking-widest uppercase"
+                />
+              </div>
+              {coupon && (
+                <p className="text-xs text-gray-500 mt-2">
+                  If valid, free trial will be applied at checkout.
+                </p>
+              )}
             </div>
 
             <button 
