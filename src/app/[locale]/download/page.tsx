@@ -33,9 +33,9 @@ export default function DownloadPage() {
               <li className="flex items-center gap-2 text-sm text-gray-300"><CheckCircle2 size={16} className="text-[#cca900]"/> Full encryption support</li>
             </ul>
 
-            <a href="/app/index.html" target="_blank" rel="noopener noreferrer" className="w-full py-4 rounded-xl bg-[#cca900] text-black font-bold text-lg hover:bg-[#b39500] transition-colors flex items-center justify-center gap-2 mt-auto shadow-[0_0_20px_rgba(204,169,0,0.2)]">
+            <a href="/downloads/mpower-app.apk" download="mpower-app.apk" className="w-full py-4 rounded-xl bg-[#cca900] text-black font-bold text-lg hover:bg-[#b39500] transition-colors flex items-center justify-center gap-2 mt-auto shadow-[0_0_20px_rgba(204,169,0,0.2)]">
               <Download size={20} />
-              Open Web App
+              Download APK
             </a>
           </div>
 

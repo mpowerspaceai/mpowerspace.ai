@@ -63,11 +63,11 @@ export default function Home() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center gap-4">
-            <Link href="/download" className="flex items-center justify-center gap-2 bg-[#cca900] text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#b39500] transition-colors border border-[#cca900]">
+            <a href="/downloads/mpower-app.apk" download="mpower-app.apk" className="flex items-center justify-center gap-2 bg-[#cca900] text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#b39500] transition-colors border border-[#cca900]">
               <Smartphone size={20} />
               {tHero('ctaPrimary')}
-            </Link>
-            <Link href="#features" className="flex items-center justify-center gap-2 bg-black text-[#cca900] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#111] transition-colors border border-[#cca900]">
+            </a>
+            <Link href="#features" prefetch={false} className="flex items-center justify-center gap-2 bg-black text-[#cca900] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#111] transition-colors border border-[#cca900]">
               {tHero('ctaSecondary')} <ArrowRight size={20} className="rtl:rotate-180" />
             </Link>
           </div>
@@ -217,9 +217,9 @@ export default function Home() {
         <p className="text-gray-400 max-w-xl mb-10 text-lg">
           {tCta('description')}
         </p>
-        <Link href="/download" className="bg-[#cca900] text-black px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#b39500] transition-colors border border-[#cca900]">
+        <a href="/downloads/mpower-app.apk" download="mpower-app.apk" className="bg-[#cca900] text-black px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#b39500] transition-colors border border-[#cca900]">
           {tCta('button')}
-        </Link>
+        </a>
       </section>
     </main>
   );

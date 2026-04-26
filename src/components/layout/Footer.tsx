@@ -21,11 +21,11 @@ export default function Footer() {
         <span>{tFooter('copyright')}</span>
       </div>
       <div className="flex gap-6">
-        <Link href="/affiliate" className="text-[#cca900] font-bold hover:text-[#FFD400] transition-colors">Affiliate Program</Link>
-        <Link href="/contact" className="hover:text-[#FFD400] transition-colors">Contact</Link>
-        <Link href="/blog" className="hover:text-[#FFD400] transition-colors">Blog</Link>
-        <Link href="/privacy" className="hover:text-[#FFD400] transition-colors">{tFooter('privacy')}</Link>
-        <Link href="/privacy" className="hover:text-[#FFD400] transition-colors">{tFooter('terms')}</Link>
+        <Link href="/affiliate" prefetch={false} className="text-[#cca900] font-bold hover:text-[#FFD400] transition-colors">Affiliate Program</Link>
+        <Link href="/contact" prefetch={false} className="hover:text-[#FFD400] transition-colors">Contact</Link>
+        <Link href="/blog" prefetch={false} className="hover:text-[#FFD400] transition-colors">Blog</Link>
+        <Link href="/privacy" prefetch={false} className="hover:text-[#FFD400] transition-colors">{tFooter('privacy')}</Link>
+        <Link href="/privacy" prefetch={false} className="hover:text-[#FFD400] transition-colors">{tFooter('terms')}</Link>
         <a href="mailto:security@mpowerspace.ai" className="hover:text-[#FFD400] transition-colors">{tFooter('support')}</a>
       </div>
     </footer>
