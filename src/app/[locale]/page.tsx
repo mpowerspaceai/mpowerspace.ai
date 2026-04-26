@@ -35,7 +35,6 @@ export default function Home() {
             loop 
             muted 
             playsInline 
-            preload="none"
             className="object-cover w-full h-full opacity-40 mix-blend-screen"
           >
             <source src="/banner-bg.mp4" type="video/mp4" />
