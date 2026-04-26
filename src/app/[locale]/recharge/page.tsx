@@ -8,6 +8,31 @@ export default function RechargePage() {
   const t = useTranslations('Recharge');
   const [amount, setAmount] = useState<string>("50");
   const [customAmount, setCustomAmount] = useState<string>("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handlePayment = async () => {
+    if (!amount || isNaN(Number(amount)) || Number(amount) <= 0) return;
+    setIsLoading(true);
+    try {
+      const res = await fetch('/api/payment/mollie', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount })
+      });
+      const data = await res.json();
+      
+      if (data.checkoutUrl) {
+        window.location.href = data.checkoutUrl;
+      } else {
+        alert(data.error || 'Payment initiation failed. Please try again.');
+      }
+    } catch (error) {
+      console.error(error);
+      alert('An error occurred while processing your payment.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <main className="flex flex-col w-full min-h-screen font-sans bg-black text-white pt-32 px-6 pb-24">
@@ -58,13 +83,14 @@ export default function RechargePage() {
               </div>
             </div>
 
-            <a 
-              href="/app/index.html" 
-              className="w-full bg-[#cca900] text-black font-bold text-xl py-5 rounded-xl hover:bg-[#b39500] transition-colors flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(204,169,0,0.2)]"
+            <button 
+              onClick={handlePayment}
+              disabled={isLoading}
+              className="w-full bg-[#cca900] text-black font-bold text-xl py-5 rounded-xl hover:bg-[#b39500] transition-colors flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(204,169,0,0.2)] disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <CreditCard size={24} />
-              {t('button')}
-            </a>
+              {isLoading ? "Processing..." : t('button')}
+            </button>
 
             <div className="flex items-center justify-center gap-2 mt-6 text-xs text-gray-500">
               <ShieldCheck size={14} className="text-[#cca900]" />

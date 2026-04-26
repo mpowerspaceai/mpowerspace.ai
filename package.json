@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.1",
+    "@mollie/api-client": "^4.5.0",
     "@paypal/react-paypal-js": "^9.1.1",
     "@prisma/client": "^6.0.0",
     "@prisma/config": "^7.8.0",
