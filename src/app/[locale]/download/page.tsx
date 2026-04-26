@@ -35,7 +35,7 @@ export default function DownloadPage() {
 
             <a href="/app/" className="w-full py-4 rounded-xl bg-[#cca900] text-black font-bold text-lg hover:bg-[#b39500] transition-colors flex items-center justify-center gap-2 mt-auto shadow-[0_0_20px_rgba(204,169,0,0.2)]">
               <Download size={20} />
-              Open / Install App
+              Open / Install PWA
             </a>
           </div>
 
@@ -45,17 +45,17 @@ export default function DownloadPage() {
               <Apple size={40} className="text-white" />
             </div>
             <h2 className="text-2xl font-bold mb-4">iPhone</h2>
-            <p className="text-gray-400 mb-8">Secure installation through the official Apple App Store.</p>
+            <p className="text-gray-400 mb-8">Install directly from your browser to your home screen.</p>
             
             <ul className="text-left space-y-3 mb-8 w-full">
-              <li className="flex items-center gap-2 text-sm text-gray-300"><CheckCircle2 size={16} className="text-[#cca900]"/> Verified by Apple</li>
+              <li className="flex items-center gap-2 text-sm text-gray-300"><CheckCircle2 size={16} className="text-[#cca900]"/> Progressive Web App</li>
               <li className="flex items-center gap-2 text-sm text-gray-300"><CheckCircle2 size={16} className="text-[#cca900]"/> Automatic updates</li>
-              <li className="flex items-center gap-2 text-sm text-gray-300"><CheckCircle2 size={16} className="text-[#cca900]"/> Optimized for iOS</li>
+              <li className="flex items-center gap-2 text-sm text-gray-300"><CheckCircle2 size={16} className="text-[#cca900]"/> Optimized for iOS Safari</li>
             </ul>
 
             <a href="/app/" className="w-full py-4 rounded-xl bg-[#cca900] text-black font-bold text-lg hover:bg-[#b39500] transition-colors flex items-center justify-center gap-2 mt-auto shadow-[0_0_20px_rgba(204,169,0,0.2)]">
               <Download size={20} />
-              Open / Install App
+              Open / Install PWA
             </a>
           </div>
 
@@ -75,7 +75,7 @@ export default function DownloadPage() {
 
             <a href="/app/" className="w-full py-4 rounded-xl bg-[#cca900] text-black font-bold text-lg hover:bg-[#b39500] transition-colors flex items-center justify-center gap-2 mt-auto shadow-[0_0_20px_rgba(204,169,0,0.2)]">
               <Download size={20} />
-              Open / Install App
+              Open / Install PWA
             </a>
           </div>
 
@@ -85,17 +85,17 @@ export default function DownloadPage() {
               <Laptop size={40} className="text-white" />
             </div>
             <h2 className="text-2xl font-bold mb-4">macOS</h2>
-            <p className="text-gray-400 mb-8">Native desktop application for Apple Silicon and Intel Macs.</p>
+            <p className="text-gray-400 mb-8">Install directly as an app through Google Chrome or Safari.</p>
             
             <ul className="text-left space-y-3 mb-8 w-full">
-              <li className="flex items-center gap-2 text-sm text-gray-300"><CheckCircle2 size={16} className="text-[#cca900]"/> Native performance</li>
+              <li className="flex items-center gap-2 text-sm text-gray-300"><CheckCircle2 size={16} className="text-[#cca900]"/> Desktop app experience</li>
               <li className="flex items-center gap-2 text-sm text-gray-300"><CheckCircle2 size={16} className="text-[#cca900]"/> End-to-end encrypted</li>
-              <li className="flex items-center gap-2 text-sm text-gray-300"><CheckCircle2 size={16} className="text-[#cca900]"/> Enterprise deployment</li>
+              <li className="flex items-center gap-2 text-sm text-gray-300"><CheckCircle2 size={16} className="text-[#cca900]"/> Fast and secure</li>
             </ul>
 
             <a href="/app/" className="w-full py-4 rounded-xl bg-[#cca900] text-black font-bold text-lg hover:bg-[#b39500] transition-colors flex items-center justify-center gap-2 mt-auto shadow-[0_0_20px_rgba(204,169,0,0.2)]">
               <Download size={20} />
-              Open / Install App
+              Open / Install PWA
             </a>
           </div>
 
@@ -105,17 +105,17 @@ export default function DownloadPage() {
               <Monitor size={40} className="text-blue-400" />
             </div>
             <h2 className="text-2xl font-bold mb-4">Windows PC</h2>
-            <p className="text-gray-400 mb-8">Robust desktop client for Windows 10 and 11 environments.</p>
+            <p className="text-gray-400 mb-8">Install directly as a desktop app through Chrome or Edge.</p>
             
             <ul className="text-left space-y-3 mb-8 w-full">
-              <li className="flex items-center gap-2 text-sm text-gray-300"><CheckCircle2 size={16} className="text-[#cca900]"/> Hardware accelerated</li>
+              <li className="flex items-center gap-2 text-sm text-gray-300"><CheckCircle2 size={16} className="text-[#cca900]"/> One-click install</li>
               <li className="flex items-center gap-2 text-sm text-gray-300"><CheckCircle2 size={16} className="text-[#cca900]"/> Background secure sync</li>
               <li className="flex items-center gap-2 text-sm text-gray-300"><CheckCircle2 size={16} className="text-[#cca900]"/> Screen sharing capable</li>
             </ul>
 
             <a href="/app/" className="w-full py-4 rounded-xl bg-[#cca900] text-black font-bold text-lg hover:bg-[#b39500] transition-colors flex items-center justify-center gap-2 mt-auto shadow-[0_0_20px_rgba(204,169,0,0.2)]">
               <Download size={20} />
-              Open / Install App
+              Open / Install PWA
             </a>
           </div>
         </div>
