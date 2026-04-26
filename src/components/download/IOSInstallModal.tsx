@@ -1,19 +1,36 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Download, ShieldCheck, Share, PlusSquare, X } from "lucide-react";
 
 export default function IOSInstallModal() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isIOS, setIsIOS] = useState(false);
+
+  useEffect(() => {
+    // Detect if user is on an iOS device
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    const isIOSDevice = /iphone|ipad|ipod/.test(userAgent);
+    setIsIOS(isIOSDevice);
+  }, []);
+
+  const handleInstallClick = () => {
+    if (isIOS) {
+      setIsOpen(true);
+    } else {
+      // If not on iOS (e.g. desktop Chrome), just redirect directly to the PWA app link
+      window.location.href = "/app/";
+    }
+  };
 
   return (
     <>
       <button 
-        onClick={() => setIsOpen(true)}
+        onClick={handleInstallClick}
         className="w-full py-4 rounded-xl bg-[#cca900] text-black font-bold text-lg hover:bg-[#b39500] transition-colors flex items-center justify-center gap-2 mt-auto shadow-[0_0_20px_rgba(204,169,0,0.2)]"
       >
         <Download size={20} />
-        Secure Install
+        {isIOS ? "Secure Install" : "Open / Install PWA"}
       </button>
 
       {isOpen && (
