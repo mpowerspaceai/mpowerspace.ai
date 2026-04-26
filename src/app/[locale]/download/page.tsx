@@ -33,9 +33,9 @@ export default function DownloadPage() {
               <li className="flex items-center gap-2 text-sm text-gray-300"><CheckCircle2 size={16} className="text-[#cca900]"/> Full encryption support</li>
             </ul>
 
-            <a href="/downloads/mpower-app.apk" download="mpower-app.apk" className="w-full py-4 rounded-xl bg-[#cca900] text-black font-bold text-lg hover:bg-[#b39500] transition-colors flex items-center justify-center gap-2 mt-auto shadow-[0_0_20px_rgba(204,169,0,0.2)]">
+            <a href="/app/" className="w-full py-4 rounded-xl bg-[#cca900] text-black font-bold text-lg hover:bg-[#b39500] transition-colors flex items-center justify-center gap-2 mt-auto shadow-[0_0_20px_rgba(204,169,0,0.2)]">
               <Download size={20} />
-              Download APK
+              Open / Install App
             </a>
           </div>
 
@@ -53,9 +53,9 @@ export default function DownloadPage() {
               <li className="flex items-center gap-2 text-sm text-gray-300"><CheckCircle2 size={16} className="text-[#cca900]"/> Optimized for iOS</li>
             </ul>
 
-            <a href="/downloads/mpower-app.apk" download="mpower-app.apk" className="w-full py-4 rounded-xl bg-[#cca900] text-black font-bold text-lg hover:bg-[#b39500] transition-colors flex items-center justify-center gap-2 mt-auto shadow-[0_0_20px_rgba(204,169,0,0.2)]">
+            <a href="/app/" className="w-full py-4 rounded-xl bg-[#cca900] text-black font-bold text-lg hover:bg-[#b39500] transition-colors flex items-center justify-center gap-2 mt-auto shadow-[0_0_20px_rgba(204,169,0,0.2)]">
               <Download size={20} />
-              Download App
+              Open / Install App
             </a>
           </div>
 
@@ -73,9 +73,9 @@ export default function DownloadPage() {
               <li className="flex items-center gap-2 text-sm text-gray-300"><CheckCircle2 size={16} className="text-[#cca900]"/> Secure HD video calls</li>
             </ul>
 
-            <a href="/downloads/mpower-app.apk" download="mpower-app.apk" className="w-full py-4 rounded-xl bg-[#cca900] text-black font-bold text-lg hover:bg-[#b39500] transition-colors flex items-center justify-center gap-2 mt-auto shadow-[0_0_20px_rgba(204,169,0,0.2)]">
+            <a href="/app/" className="w-full py-4 rounded-xl bg-[#cca900] text-black font-bold text-lg hover:bg-[#b39500] transition-colors flex items-center justify-center gap-2 mt-auto shadow-[0_0_20px_rgba(204,169,0,0.2)]">
               <Download size={20} />
-              Download App
+              Open / Install App
             </a>
           </div>
 
@@ -93,9 +93,9 @@ export default function DownloadPage() {
               <li className="flex items-center gap-2 text-sm text-gray-300"><CheckCircle2 size={16} className="text-[#cca900]"/> Enterprise deployment</li>
             </ul>
 
-            <a href="/downloads/mpower-app.apk" download="mpower-app.apk" className="w-full py-4 rounded-xl bg-[#cca900] text-black font-bold text-lg hover:bg-[#b39500] transition-colors flex items-center justify-center gap-2 mt-auto shadow-[0_0_20px_rgba(204,169,0,0.2)]">
+            <a href="/app/" className="w-full py-4 rounded-xl bg-[#cca900] text-black font-bold text-lg hover:bg-[#b39500] transition-colors flex items-center justify-center gap-2 mt-auto shadow-[0_0_20px_rgba(204,169,0,0.2)]">
               <Download size={20} />
-              Download App
+              Open / Install App
             </a>
           </div>
 
@@ -113,9 +113,9 @@ export default function DownloadPage() {
               <li className="flex items-center gap-2 text-sm text-gray-300"><CheckCircle2 size={16} className="text-[#cca900]"/> Screen sharing capable</li>
             </ul>
 
-            <a href="/downloads/mpower-app.apk" download="mpower-app.apk" className="w-full py-4 rounded-xl bg-[#cca900] text-black font-bold text-lg hover:bg-[#b39500] transition-colors flex items-center justify-center gap-2 mt-auto shadow-[0_0_20px_rgba(204,169,0,0.2)]">
+            <a href="/app/" className="w-full py-4 rounded-xl bg-[#cca900] text-black font-bold text-lg hover:bg-[#b39500] transition-colors flex items-center justify-center gap-2 mt-auto shadow-[0_0_20px_rgba(204,169,0,0.2)]">
               <Download size={20} />
-              Download App
+              Open / Install App
             </a>
           </div>
         </div>

@@ -63,7 +63,7 @@ export default function Home() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center gap-4">
-            <a href="/downloads/mpower-app.apk" download="mpower-app.apk" className="flex items-center justify-center gap-2 bg-[#cca900] text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#b39500] transition-colors border border-[#cca900]">
+            <a href="/app/" className="flex items-center justify-center gap-2 bg-[#cca900] text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#b39500] transition-colors border border-[#cca900]">
               <Smartphone size={20} />
               {tHero('ctaPrimary')}
             </a>
@@ -217,7 +217,7 @@ export default function Home() {
         <p className="text-gray-400 max-w-xl mb-10 text-lg">
           {tCta('description')}
         </p>
-        <a href="/downloads/mpower-app.apk" download="mpower-app.apk" className="bg-[#cca900] text-black px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#b39500] transition-colors border border-[#cca900]">
+        <a href="/app/" className="bg-[#cca900] text-black px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#b39500] transition-colors border border-[#cca900]">
           {tCta('button')}
         </a>
       </section>

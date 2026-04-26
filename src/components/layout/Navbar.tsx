@@ -97,7 +97,7 @@ export default function Navbar() {
               </div>
             </div>
 
-            <a href="/app/" onClick={() => setIsMobileMenuOpen(false)} className="bg-[#cca900] text-black px-6 py-4 rounded-lg font-bold text-center mt-4">
+            <a href="/downloads/mpower-app.apk" download="mpower-app.apk" onClick={() => setIsMobileMenuOpen(false)} className="bg-[#cca900] text-black px-6 py-4 rounded-lg font-bold text-center mt-4">
               {tNav('downloadApp')}
             </a>
           </div>
