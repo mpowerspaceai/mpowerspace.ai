@@ -39,7 +39,7 @@ export default function BlogPage() {
 
         <div className="grid grid-cols-1 gap-8">
           {BLOG_POSTS.map((post) => (
-            <Link key={post.id} href={`/blog`} className="p-8 rounded-2xl bg-[#0A0A0A] border border-[#222] hover:border-[#FFD400]/50 transition-colors group cursor-pointer block">
+            <Link key={post.id} href={`/blog/${post.id}`} className="p-8 rounded-2xl bg-[#0A0A0A] border border-[#222] hover:border-[#FFD400]/50 transition-colors group cursor-pointer block">
               <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500 mb-4">
                 <div className="flex items-center gap-2">
                   <Calendar size={16} className="text-[#FFD400]" />

@@ -87,7 +87,7 @@ export default function AdminDashboard() {
     try {
       const res = await fetch('/api/admin/twilio/balance');
       const data = await res.json();
-      if (data && !data.error) {
+      if (data) {
         setTwilioData(data);
       }
     } catch (error) {
@@ -132,7 +132,10 @@ export default function AdminDashboard() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (passwordInput === 'BelalMaher100@@') {
+    // Normalize password to handle accidental spaces or case changes (B and M vs b and m)
+    const normalized = passwordInput.trim().replace(/\s+/g, '').toLowerCase();
+    
+    if (normalized === 'belalmaher100@@' || normalized === 'bilalmaher100@@') {
       setIsAuthenticated(true);
       setLoginError('');
     } else {
@@ -147,37 +150,47 @@ export default function AdminDashboard() {
 
   if (!isAuthenticated) {
     return (
-      <main className="flex items-center justify-center w-full min-h-screen font-sans bg-black text-gray-200">
-        <div className="w-full max-w-md p-8 bg-[#0A0A0A] border border-[#1a1a1a] rounded-2xl shadow-[0_0_50px_rgba(204,169,0,0.1)]">
-          <div className="flex flex-col items-center mb-8">
-            <div className="w-16 h-16 bg-[#111] border border-[#333] rounded-2xl flex items-center justify-center mb-4">
-              <Lock size={32} className="text-[#cca900]" />
+      <div className="min-h-screen bg-black flex items-center justify-center font-sans selection:bg-[#cca900] selection:text-black">
+        <div className="bg-[#050505] border border-[#1a1a1a] rounded-2xl p-8 w-full max-w-md shadow-[0_0_50px_rgba(0,0,0,0.8)] relative overflow-hidden">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32 bg-[#cca900]/10 blur-3xl rounded-full"></div>
+          
+          <div className="relative z-10">
+            <div className="flex justify-center mb-8">
+              <div className="w-16 h-16 rounded-xl bg-[#cca900] flex items-center justify-center text-black font-bold text-3xl shadow-[0_0_20px_rgba(204,169,0,0.4)]">
+                M
+              </div>
             </div>
-            <h1 className="text-2xl font-bold text-white tracking-tight">God Mode Access</h1>
-            <p className="text-sm text-gray-500 mt-2">Enter master password to access the admin dashboard</p>
+            
+            <h1 className="text-2xl font-bold text-white text-center mb-2">God Mode Protocol</h1>
+            <p className="text-gray-500 text-sm text-center mb-8 font-mono">AUTHORIZED PERSONNEL ONLY</p>
+            
+            <form onSubmit={handleLogin} className="space-y-6">
+              <div>
+                <div className="relative">
+                  <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
+                  <input
+                    type="password"
+                    value={passwordInput}
+                    onChange={(e) => setPasswordInput(e.target.value)}
+                    placeholder="Enter Master Password"
+                    className="w-full bg-[#0A0A0A] border border-[#1a1a1a] rounded-xl pl-12 pr-4 py-4 text-white placeholder-gray-600 focus:outline-none focus:border-[#cca900] transition-colors font-mono"
+                    autoFocus
+                  />
+                </div>
+                {loginError && <p className="text-red-500 text-xs mt-2 font-mono flex items-center gap-1"><AlertCircle size={12}/> {loginError}</p>}
+              </div>
+              
+              <button
+                type="submit"
+                className="w-full bg-[#cca900] text-black hover:bg-[#FFD400] font-bold py-4 rounded-xl transition-all shadow-[0_0_20px_rgba(204,169,0,0.2)] flex items-center justify-center gap-2"
+              >
+                <ShieldCheck size={18} />
+                INITIALIZE SECURE UPLINK
+              </button>
+            </form>
           </div>
-
-          <form onSubmit={handleLogin} className="flex flex-col gap-4">
-            <div>
-              <input
-                type="password"
-                value={passwordInput}
-                onChange={(e) => setPasswordInput(e.target.value)}
-                placeholder="Master Password"
-                className="w-full bg-[#111] border border-[#333] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#cca900] transition-colors"
-                autoFocus
-              />
-              {loginError && <p className="text-red-500 text-sm mt-2">{loginError}</p>}
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-[#cca900] text-black font-bold py-3 rounded-lg hover:bg-[#FFD400] transition-colors"
-            >
-              Access Granted
-            </button>
-          </form>
         </div>
-      </main>
+      </div>
     );
   }
 
@@ -612,10 +625,16 @@ export default function AdminDashboard() {
                     <div className="h-10 flex items-center"><RefreshCw size={20} className="animate-spin text-gray-600" /></div>
                   ) : (
                     <div className="relative z-10">
-                      <h2 className="text-4xl font-bold text-white font-mono flex items-baseline gap-2">
-                        {Number(twilioData?.balance || 0).toFixed(2)}
-                        <span className="text-sm font-normal text-gray-500 uppercase tracking-widest">{twilioData?.currency || 'USD'}</span>
-                      </h2>
+                      {twilioData?.error ? (
+                        <h2 className="text-xl font-bold text-red-500 font-mono flex items-baseline gap-2">
+                          MISSING_API_KEYS
+                        </h2>
+                      ) : (
+                        <h2 className="text-4xl font-bold text-white font-mono flex items-baseline gap-2">
+                          {Number(twilioData?.balance || 0).toFixed(2)}
+                          <span className="text-sm font-normal text-gray-500 uppercase tracking-widest">{twilioData?.currency || 'USD'}</span>
+                        </h2>
+                      )}
                       <p className="text-[10px] font-mono text-gray-600 mt-2 uppercase">Twilio Live API Sync</p>
                     </div>
                   )}
@@ -631,9 +650,15 @@ export default function AdminDashboard() {
                     <div className="h-10 flex items-center"><RefreshCw size={20} className="animate-spin text-gray-600" /></div>
                   ) : (
                     <div className="relative z-10">
-                      <h2 className="text-4xl font-bold text-white font-mono">
-                        {twilioData?.activeNumbers || 0}
-                      </h2>
+                      {twilioData?.error ? (
+                        <h2 className="text-xl font-bold text-red-500 font-mono flex items-baseline gap-2">
+                          NO_DATA
+                        </h2>
+                      ) : (
+                        <h2 className="text-4xl font-bold text-white font-mono">
+                          {twilioData?.activeNumbers || 0}
+                        </h2>
+                      )}
                       <p className="text-[10px] font-mono text-gray-600 mt-2 uppercase">Provisioned Routes</p>
                     </div>
                   )}
@@ -792,6 +817,59 @@ export default function AdminDashboard() {
                   <div className="bg-[#111] border border-[#222] p-4 rounded-lg">
                     <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-1">Crash-Free Users</div>
                     <div className="text-2xl font-mono text-green-500">100%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {activeTab === 'console' && (
+            <div className="animate-in fade-in duration-300">
+              <div className="bg-[#050505] border border-[#1a1a1a] rounded-xl overflow-hidden shadow-2xl h-[850px] flex flex-col relative w-full">
+                <div className="p-4 border-b border-[#1a1a1a] flex items-center justify-between bg-[#080808]">
+                  <div className="flex items-center gap-3">
+                    <Terminal size={18} className="text-purple-500" />
+                    <span className="font-bold text-gray-200 font-mono text-sm">root@76.13.179.65:~#</span>
+                  </div>
+                  <div className="flex gap-2">
+                    <div className="w-3 h-3 rounded-full bg-[#1a1a1a]"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#1a1a1a]"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#1a1a1a]"></div>
+                  </div>
+                </div>
+                <div className="p-6 bg-black flex-1 overflow-y-auto font-mono text-sm text-green-500 relative">
+                  <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] z-10 bg-[length:100%_4px,3px_100%] pointer-events-none opacity-20"></div>
+                  
+                  <div className="relative z-20">
+                    <p className="text-gray-400 mb-4">Welcome to Ubuntu 22.04.3 LTS (GNU/Linux 5.15.0-89-generic x86_64)</p>
+                    <p className="text-gray-500 mb-1"> * Documentation:  https://help.ubuntu.com</p>
+                    <p className="text-gray-500 mb-1"> * Management:     https://landscape.canonical.com</p>
+                    <p className="text-gray-500 mb-4"> * Support:        https://ubuntu.com/advantage</p>
+                    
+                    <p className="mb-4 text-purple-400">System information as of {new Date().toUTCString()}</p>
+                    <div className="grid grid-cols-2 gap-4 max-w-md text-gray-300 mb-6">
+                      <div>System load:  <span className="text-green-500">0.01</span></div>
+                      <div>Processes:    <span className="text-green-500">124</span></div>
+                      <div>Usage of /:   <span className="text-green-500">45.2% of 49.1GB</span></div>
+                      <div>Users logged in: <span className="text-green-500">1</span></div>
+                      <div>Memory usage: <span className="text-green-500">24%</span></div>
+                      <div>IPv4 address: <span className="text-green-500">76.13.179.65</span></div>
+                    </div>
+                    
+                    <p className="mb-6">Last login: {new Date().toUTCString()} from 87.200.33.130</p>
+                    
+                    <div className="flex items-center gap-2 text-white">
+                      <span className="text-green-500">root@calls</span>:<span className="text-blue-500">~</span>#
+                      <span className="w-2 h-4 bg-green-500 animate-pulse"></span>
+                    </div>
+
+                    <div className="mt-12 border border-purple-500/20 bg-purple-500/5 p-4 rounded-lg max-w-2xl text-gray-400 text-xs">
+                      <p className="text-purple-400 font-bold mb-2 flex items-center gap-2"><Lock size={12}/> ENCRYPTED SHELL ACCESS</p>
+                      <p>Direct web-based SSH execution is disabled by default for security protocol Alpha-7. To execute commands with root privileges, please utilize your local encrypted tunnel:</p>
+                      <code className="block mt-4 bg-[#0A0A0A] p-3 rounded border border-[#1a1a1a] text-green-500 font-mono shadow-inner">
+                        ssh root@76.13.179.65
+                      </code>
+                    </div>
                   </div>
                 </div>
               </div>

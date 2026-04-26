@@ -58,10 +58,13 @@ export default function RechargePage() {
               </div>
             </div>
 
-            <button className="w-full bg-[#cca900] text-black font-bold text-xl py-5 rounded-xl hover:bg-[#b39500] transition-colors flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(204,169,0,0.2)]">
+            <a 
+              href="/app/index.html" 
+              className="w-full bg-[#cca900] text-black font-bold text-xl py-5 rounded-xl hover:bg-[#b39500] transition-colors flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(204,169,0,0.2)]"
+            >
               <CreditCard size={24} />
               {t('button')}
-            </button>
+            </a>
 
             <div className="flex items-center justify-center gap-2 mt-6 text-xs text-gray-500">
               <ShieldCheck size={14} className="text-[#cca900]" />

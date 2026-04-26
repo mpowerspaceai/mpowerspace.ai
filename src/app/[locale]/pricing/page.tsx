@@ -95,7 +95,7 @@ export default function PricingPage() {
               </ul>
               
               <a 
-                href="https://app.mpowerspace.ai"
+                href="/app/index.html"
                 className={`w-full py-4 rounded-xl font-bold text-lg transition-colors flex items-center justify-center ${
                   plan.popular 
                     ? 'bg-[#cca900] text-black hover:bg-[#b39500]' 

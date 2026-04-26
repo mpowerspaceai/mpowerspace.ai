@@ -41,7 +41,7 @@ export default function Navbar() {
         </Link>
         <div className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-400">
           <Link href="/#features" className="hover:text-[#FFD400] transition-colors">{tNav('features')}</Link>
-          <Link href="/architecture" className="hover:text-[#FFD400] transition-colors">{tNav('architecture')}</Link>
+          <Link href="/#architecture" className="hover:text-[#FFD400] transition-colors">{tNav('architecture')}</Link>
           <Link href="/about" className="hover:text-[#FFD400] transition-colors">{tNav('about')}</Link>
           <Link href="/pricing" className="hover:text-[#FFD400] transition-colors">{tNav('pricing')}</Link>
           <Link href="/contact" className="hover:text-[#FFD400] transition-colors">{tNav('contact')}</Link>
@@ -79,7 +79,7 @@ export default function Navbar() {
         <div className="fixed inset-0 top-[73px] bg-black z-40 flex flex-col p-6 overflow-y-auto animate-in fade-in duration-200">
           <div className="flex flex-col gap-6 text-lg font-medium">
             <Link href="/#features" onClick={() => setIsMobileMenuOpen(false)} className="border-b border-[#222] pb-4">{tNav('features')}</Link>
-            <Link href="/architecture" onClick={() => setIsMobileMenuOpen(false)} className="border-b border-[#222] pb-4">{tNav('architecture')}</Link>
+            <Link href="/#architecture" onClick={() => setIsMobileMenuOpen(false)} className="border-b border-[#222] pb-4">{tNav('architecture')}</Link>
             <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="border-b border-[#222] pb-4">{tNav('about')}</Link>
             <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)} className="border-b border-[#222] pb-4">{tNav('pricing')}</Link>
             <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="border-b border-[#222] pb-4">{tNav('contact')}</Link>

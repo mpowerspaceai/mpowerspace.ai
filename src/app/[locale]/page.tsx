@@ -74,6 +74,100 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Architecture Section */}
+      <section id="architecture" className="w-full px-6 py-24 bg-black border-t border-[#222]">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-24">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#cca900]/30 bg-[#cca900]/10 text-[#cca900] text-sm font-medium mb-6">
+              <Zap size={16} />
+              <span>{tArch('badge')}</span>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1] mb-6">
+              {tArch('titlePart1')} <br/>
+              <span className="text-[#cca900]">{tArch('titlePart2')}</span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+              {tArch('desc1')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            {/* Animated Visualization (Smart/Hacker Edition) */}
+            <div className="relative w-full max-w-lg mx-auto aspect-square flex items-center justify-center group">
+              {/* Radar Sweep Effect */}
+              <div className="absolute inset-0 rounded-full overflow-hidden opacity-30">
+                <div className="absolute top-1/2 left-1/2 w-full h-[2px] bg-gradient-to-r from-transparent via-[#cca900] to-transparent origin-left animate-spin" style={{ animationDuration: '6s' }}></div>
+              </div>
+              
+              {/* Galaxy Effect */}
+              <div className="absolute inset-0 rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#cca900]/20 via-black to-black opacity-60"></div>
+              
+              {/* Pulsing Core Aura */}
+              <div className="absolute inset-0 rounded-full border border-[#cca900]/20 shadow-[0_0_120px_rgba(204,169,0,0.2)] animate-ping" style={{ animationDuration: '3s' }}></div>
+              
+              {/* Orbit Rings with glowing dots */}
+              <div className="absolute inset-4 rounded-full border border-[#cca900]/20 border-dashed animate-spin" style={{ animationDuration: '30s' }}></div>
+              <div className="absolute inset-16 rounded-full border border-[#cca900]/30 border-dotted animate-spin" style={{ animationDuration: '40s', animationDirection: 'reverse' }}></div>
+              <div className="absolute inset-32 rounded-full border border-[#cca900]/10 animate-spin" style={{ animationDuration: '50s' }}></div>
+
+              {/* Data Streams (Static Lines) */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#cca900]/20 to-transparent rotate-45"></div>
+                <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#cca900]/20 to-transparent -rotate-45"></div>
+              </div>
+
+              {/* Core / Sun */}
+              <div className="w-32 h-32 bg-black border-2 border-[#cca900] rounded-full flex items-center justify-center shadow-[0_0_80px_rgba(204,169,0,0.8)] z-10 relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                <div className="absolute inset-0 bg-[#cca900]/10 animate-pulse"></div>
+                <ShieldCheck size={50} className="text-[#cca900]" />
+              </div>
+              
+              {/* Orbiting Planets / Nodes (Enhanced) */}
+              <div className="absolute w-12 h-12 bg-[#0A0A0A] rounded-full border border-[#cca900]/50 flex items-center justify-center z-10 shadow-[0_0_20px_rgba(204,169,0,0.5)] animate-orbit-1 backdrop-blur-md group-hover:border-[#cca900] transition-colors duration-500">
+                <Smartphone size={20} className="text-[#cca900]" />
+                <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-ping"></div>
+                <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full"></div>
+              </div>
+              
+              <div className="absolute w-14 h-14 bg-[#0A0A0A] rounded-full border border-[#cca900]/50 flex items-center justify-center z-10 shadow-[0_0_20px_rgba(204,169,0,0.5)] animate-orbit-2 backdrop-blur-md group-hover:border-[#cca900] transition-colors duration-500">
+                <Globe size={24} className="text-[#cca900]" />
+                <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-blue-500 rounded-full animate-ping" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-blue-500 rounded-full"></div>
+              </div>
+              
+              <div className="absolute w-10 h-10 bg-[#0A0A0A] rounded-full border border-[#cca900]/50 flex items-center justify-center z-10 shadow-[0_0_20px_rgba(204,169,0,0.5)] animate-orbit-3 backdrop-blur-md group-hover:border-[#cca900] transition-colors duration-500">
+                <Lock size={16} className="text-[#cca900]" />
+                <div className="absolute -top-1 -left-1 w-2 h-2 bg-red-500 rounded-full animate-ping" style={{ animationDelay: '2s' }}></div>
+                <div className="absolute -top-1 -left-1 w-2 h-2 bg-red-500 rounded-full"></div>
+              </div>
+            </div>
+
+            {/* Explanation Text */}
+            <div className="space-y-10">
+              <div className="p-8 rounded-3xl bg-[#0A0A0A] border border-[#222]">
+                <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
+                  <Globe className="text-[#cca900]" size={28} />
+                  {tArch('noServerTitle')}
+                </h3>
+                <p className="text-gray-400 leading-relaxed">
+                  {tArch('noServerDesc')}
+                </p>
+              </div>
+
+              <div className="p-8 rounded-3xl bg-[#0A0A0A] border border-[#222]">
+                <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
+                  <Zap className="text-[#cca900]" size={28} />
+                  {tArch('localKeyTitle')}
+                </h3>
+                <p className="text-gray-400 leading-relaxed">
+                  {tArch('localKeyDesc')}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Grid */}
       <section id="features" className="w-full px-6 py-24 bg-[#0A0A0A] border-t border-[#222]">
         <div className="max-w-6xl mx-auto">
