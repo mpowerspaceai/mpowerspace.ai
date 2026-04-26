@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="M-POWER" />
     <link rel="apple-touch-icon" href="/app/images/logo.png" />
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="/app/manifest.json" />
     <title>M-POWER</title>
     <style>
       body {
@@ -29,15 +29,15 @@
         overflow-x: hidden;
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-B6aQ-oxX.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DbWvrQYW.css">
+    <script type="module" crossorigin src="/app/assets/index-B6aQ-oxX.js"></script>
+    <link rel="stylesheet" crossorigin href="/app/assets/index-DbWvrQYW.css">
   </head>
   <body class="bg-black">
     <div id="root"></div>
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js').then(registration => {
+          navigator.serviceWorker.register('/app/sw.js').then(registration => {
             console.log('SW registered: ', registration);
           }).catch(registrationError => {
             console.log('SW registration failed: ', registrationError);
