@@ -5,9 +5,11 @@ import { Download, ShieldCheck, Share, PlusSquare, X } from "lucide-react";
 
 export default function IOSInstallModal() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const [isIOS, setIsIOS] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     // Detect if user is on an iOS device
     const userAgent = window.navigator.userAgent.toLowerCase();
     const isIOSDevice = /iphone|ipad|ipod/.test(userAgent);
@@ -22,6 +24,18 @@ export default function IOSInstallModal() {
       window.location.href = "/app/";
     }
   };
+
+  if (!isMounted) {
+    return (
+      <button 
+        disabled
+        className="w-full py-4 rounded-xl bg-[#cca900] text-black font-bold text-lg opacity-50 transition-colors flex items-center justify-center gap-2 mt-auto shadow-[0_0_20px_rgba(204,169,0,0.2)]"
+      >
+        <Download size={20} />
+        Loading...
+      </button>
+    );
+  }
 
   return (
     <>
