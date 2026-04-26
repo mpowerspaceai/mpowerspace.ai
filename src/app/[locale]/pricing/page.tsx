@@ -95,10 +95,10 @@ export default function PricingPage() {
               </ul>
               
               <a 
-                href="/app/index.html"
+                href="/app/"
                 className={`w-full py-4 rounded-xl font-bold text-lg transition-colors flex items-center justify-center ${
                   plan.popular 
-                    ? 'bg-[#cca900] text-black hover:bg-[#b39500]' 
+                    ? 'bg-[#cca900] text-black hover:bg-[#b39500] shadow-[0_0_20px_rgba(204,169,0,0.2)]' 
                     : 'bg-transparent text-white border border-[#333] hover:border-[#cca900] hover:text-[#cca900]'
                 }`}
               >
