@@ -47,9 +47,9 @@ export default function Navbar() {
           <Link href="/contact" prefetch={false} className="hover:text-[#FFD400] transition-colors">{tNav('contact')}</Link>
           <Link href="/blog" prefetch={false} className="hover:text-[#FFD400] transition-colors">{tNav('blog')}</Link>
           <Link href="/recharge" prefetch={false} className="text-[#cca900] hover:text-[#FFD400] transition-colors font-bold">{tNav('recharge')}</Link>
-          <a href="/app/" className="bg-[#cca900] text-black px-4 py-2 rounded-md font-semibold hover:bg-[#FFD400] transition-colors">
+          <Link href="/download" className="bg-[#cca900] text-black px-4 py-2 rounded-md font-semibold hover:bg-[#FFD400] transition-colors">
             {tNav('downloadApp')}
-          </a>
+          </Link>
           
           <div className="relative group">
             <button className="flex items-center gap-1 hover:text-white transition-colors">
@@ -97,9 +97,9 @@ export default function Navbar() {
               </div>
             </div>
 
-            <a href="/app/" onClick={() => setIsMobileMenuOpen(false)} className="bg-[#cca900] text-black px-6 py-4 rounded-lg font-bold text-center mt-4">
+            <Link href="/download" onClick={() => setIsMobileMenuOpen(false)} className="bg-[#cca900] text-black px-6 py-4 rounded-lg font-bold text-center mt-4">
               {tNav('downloadApp')}
-            </a>
+            </Link>
           </div>
         </div>
       )}
