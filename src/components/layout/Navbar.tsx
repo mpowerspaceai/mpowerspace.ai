@@ -47,7 +47,7 @@ export default function Navbar() {
           <Link href="/contact" prefetch={false} className="hover:text-[#FFD400] transition-colors">{tNav('contact')}</Link>
           <Link href="/blog" prefetch={false} className="hover:text-[#FFD400] transition-colors">{tNav('blog')}</Link>
           <Link href="/recharge" prefetch={false} className="text-[#cca900] hover:text-[#FFD400] transition-colors font-bold">{tNav('recharge')}</Link>
-          <a href="/downloads/mpower-app.apk" download="mpower-app.apk" className="bg-[#cca900] text-black px-4 py-2 rounded-md font-semibold hover:bg-[#FFD400] transition-colors">
+          <a href="/app/" className="bg-[#cca900] text-black px-4 py-2 rounded-md font-semibold hover:bg-[#FFD400] transition-colors">
             {tNav('downloadApp')}
           </a>
           
@@ -97,7 +97,7 @@ export default function Navbar() {
               </div>
             </div>
 
-            <a href="/downloads/mpower-app.apk" download="mpower-app.apk" onClick={() => setIsMobileMenuOpen(false)} className="bg-[#cca900] text-black px-6 py-4 rounded-lg font-bold text-center mt-4">
+            <a href="/app/" onClick={() => setIsMobileMenuOpen(false)} className="bg-[#cca900] text-black px-6 py-4 rounded-lg font-bold text-center mt-4">
               {tNav('downloadApp')}
             </a>
           </div>
