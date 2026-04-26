@@ -41,6 +41,10 @@ export async function POST(req: Request) {
       redirectUrl: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://mpowerspace.ai'}/app/`,
       webhookUrl: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://mpowerspace.ai'}/api/webhooks/mollie`,
       sequenceType: isSubscription ? SequenceType.first : SequenceType.oneoff,
+      metadata: {
+        isTrial: finalAmount === 1.00,
+        plan: 'Executive 22'
+      }
     });
 
     return NextResponse.json({ checkoutUrl: payment.getCheckoutUrl() });
