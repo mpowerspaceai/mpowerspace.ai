@@ -98,7 +98,9 @@ export default async function RootLayout({
               if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.getRegistrations().then(function(registrations) {
                   for(let registration of registrations) {
-                    registration.unregister();
+                    if (registration.scope.includes('mpowerspace.ai/') || registration.scope.includes('localhost:3000/')) {
+                      registration.unregister();
+                    }
                   }
                 });
               }

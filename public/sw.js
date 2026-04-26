@@ -19,5 +19,7 @@ self.addEventListener('activate', (e) => {
 });
 
 self.addEventListener('fetch', (e) => {
-  // Do nothing, let the browser handle it
+  // If we don't call e.respondWith, the browser handles the request normally.
+  // However, returning early ensures we don't block range requests or cause ERR_ABORTED
+  return;
 });
