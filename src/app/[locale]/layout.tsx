@@ -20,6 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mpowerspace.ai"),
   title: "Mpower Space | 100% Anti-Spy Call Encryption",
   description: "Call freely from anywhere in the world using your own phone number under total encryption. Mpower Space offers military-grade voice encryption and zero-compute architecture.",
   keywords: ["Mpower Space", "call encryption", "secure calls", "anti-spy phone calls", "WebRTC calls", "enterprise communication", "crypto wallet", "zero-compute architecture", "VPN for voice"],
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mpower Space | 100% Anti-Spy Call Encryption",
     description: "Call freely from anywhere in the world using your own phone number under total encryption. Mpower Space offers military-grade voice encryption.",
-    url: "https://mpowerspace.ai",
+    url: "/",
     siteName: "Mpower Space",
     images: [
       {
@@ -48,6 +49,17 @@ export const metadata: Metadata = {
     title: "Mpower Space | 100% Anti-Spy Call Encryption",
     description: "Make international calls under total encryption. Like a VPN for your voice.",
     images: ["https://mpowerspace.ai/logo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1
+    }
   },
   manifest: "/manifest.json",
   alternates: {
