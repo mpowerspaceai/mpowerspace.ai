@@ -1,4 +1,7 @@
-import { ArrowLeft, CheckCircle2, Shield } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import { ArrowLeft, CheckCircle2, Shield, X } from "lucide-react";
 import { Link } from "@/i18n/routing";
 
 const PLANS = [
@@ -51,6 +54,43 @@ const PLANS = [
 ];
 
 export default function PricingPage() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [website, setWebsite] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    try {
+      const res = await fetch("/api/business-plan", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, phone, companyWebsite: website }),
+      });
+      
+      if (res.ok) {
+        setSubmitSuccess(true);
+        setTimeout(() => {
+          setIsPopupOpen(false);
+          setSubmitSuccess(false);
+          setEmail("");
+          setPhone("");
+          setWebsite("");
+        }, 3000);
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      alert("Error submitting request.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <main className="flex flex-col w-full min-h-screen font-sans bg-black text-white pt-32 px-6 pb-32">
       <div className="max-w-6xl mx-auto w-full">
@@ -94,20 +134,126 @@ export default function PricingPage() {
                 ))}
               </ul>
               
-              <a 
-                href="/app/"
-                className={`w-full py-4 rounded-xl font-bold text-lg transition-colors flex items-center justify-center ${
-                  plan.popular 
-                    ? 'bg-[#cca900] text-black hover:bg-[#b39500] shadow-[0_0_20px_rgba(204,169,0,0.2)]' 
-                    : 'bg-transparent text-white border border-[#333] hover:border-[#cca900] hover:text-[#cca900]'
-                }`}
-              >
-                {plan.cta}
-              </a>
+              {plan.name === "Business Plan" ? (
+                <button 
+                  onClick={() => setIsPopupOpen(true)}
+                  className={`w-full py-4 rounded-xl font-bold text-lg transition-colors flex items-center justify-center ${
+                    plan.popular 
+                      ? 'bg-[#cca900] text-black hover:bg-[#b39500] shadow-[0_0_20px_rgba(204,169,0,0.2)]' 
+                      : 'bg-transparent text-white border border-[#333] hover:border-[#cca900] hover:text-[#cca900]'
+                  }`}
+                >
+                  {plan.cta}
+                </button>
+              ) : plan.name === "Executive" ? (
+                <button 
+                  onClick={async () => {
+                    const res = await fetch('/api/payment/mollie', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ amount: 22, coupon: '' })
+                    });
+                    const data = await res.json();
+                    if (data.checkoutUrl) window.location.href = data.checkoutUrl;
+                  }}
+                  className={`w-full py-4 rounded-xl font-bold text-lg transition-colors flex items-center justify-center ${
+                    plan.popular 
+                      ? 'bg-[#cca900] text-black hover:bg-[#b39500] shadow-[0_0_20px_rgba(204,169,0,0.2)]' 
+                      : 'bg-transparent text-white border border-[#333] hover:border-[#cca900] hover:text-[#cca900]'
+                  }`}
+                >
+                  {plan.cta}
+                </button>
+              ) : (
+                <a 
+                  href="mailto:admin@mpowerspace.ai"
+                  className={`w-full py-4 rounded-xl font-bold text-lg transition-colors flex items-center justify-center ${
+                    plan.popular 
+                      ? 'bg-[#cca900] text-black hover:bg-[#b39500] shadow-[0_0_20px_rgba(204,169,0,0.2)]' 
+                      : 'bg-transparent text-white border border-[#333] hover:border-[#cca900] hover:text-[#cca900]'
+                  }`}
+                >
+                  {plan.cta}
+                </a>
+              )}
             </div>
           ))}
         </div>
       </div>
+
+      {/* Business Plan Request Popup */}
+      {isPopupOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+          <div className="bg-[#0A0A0A] border border-[#333] rounded-2xl p-8 max-w-md w-full relative shadow-2xl shadow-black/50">
+            <button 
+              onClick={() => setIsPopupOpen(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-white"
+            >
+              <X size={24} />
+            </button>
+            
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold mb-2">Request Business Plan</h2>
+              <p className="text-gray-400 text-sm">Enter your details and our team will provision your dedicated business environment.</p>
+            </div>
+
+            {submitSuccess ? (
+              <div className="flex flex-col items-center justify-center py-8 text-center">
+                <CheckCircle2 className="w-16 h-16 text-green-500 mb-4" />
+                <h3 className="text-xl font-bold text-white mb-2">Request Received</h3>
+                <p className="text-gray-400">We will contact you shortly to complete the setup.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-400 mb-1">Company Website</label>
+                  <input 
+                    type="text" 
+                    required
+                    placeholder="https://example.com"
+                    value={website}
+                    onChange={(e) => setWebsite(e.target.value)}
+                    className="w-full bg-[#111] border border-[#333] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#cca900] focus:ring-1 focus:ring-[#cca900] transition-colors"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-400 mb-1">Work Email</label>
+                  <input 
+                    type="email" 
+                    required
+                    placeholder="ceo@example.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full bg-[#111] border border-[#333] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#cca900] focus:ring-1 focus:ring-[#cca900] transition-colors"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-400 mb-1">Phone Number</label>
+                  <input 
+                    type="tel" 
+                    required
+                    placeholder="+1 (555) 000-0000"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    className="w-full bg-[#111] border border-[#333] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#cca900] focus:ring-1 focus:ring-[#cca900] transition-colors"
+                  />
+                </div>
+                <button 
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-[#cca900] text-black hover:bg-[#b39500] font-bold py-3 rounded-lg mt-4 transition-colors flex justify-center items-center"
+                >
+                  {isSubmitting ? (
+                    <span className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin"></span>
+                  ) : (
+                    "Submit Request"
+                  )}
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+      )}
     </main>
   );
 }

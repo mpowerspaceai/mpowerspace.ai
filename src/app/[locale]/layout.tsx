@@ -7,7 +7,7 @@ import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import { Analytics } from "@vercel/analytics/next";
+import InstallAppPrompt from '@/components/pwa/InstallAppPrompt';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -49,6 +49,7 @@ export const metadata: Metadata = {
     description: "Make international calls under total encryption. Like a VPN for your voice.",
     images: ["https://mpowerspace.ai/logo.png"],
   },
+  manifest: "/manifest.json",
   alternates: {
     canonical: "https://mpowerspace.ai",
     languages: {
@@ -90,27 +91,8 @@ export default async function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <InstallAppPrompt />
         </NextIntlClientProvider>
-        <Analytics />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.getRegistrations().then(function(registrations) {
-                  for(let registration of registrations) {
-                    if (registration.scope.includes('mpowerspace.ai/') || registration.scope.includes('localhost:3000/')) {
-                      registration.unregister();
-                    }
-                  }
-                });
-              }
-              caches.keys().then(function(names) {
-                for (let name of names)
-                  caches.delete(name);
-              });
-            `,
-          }}
-        />
       </body>
     </html>
   );

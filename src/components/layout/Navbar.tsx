@@ -43,6 +43,7 @@ export default function Navbar() {
           <Link href="/#features" prefetch={false} className="hover:text-[#FFD400] transition-colors">{tNav('features')}</Link>
           <Link href="/#architecture" prefetch={false} className="hover:text-[#FFD400] transition-colors">{tNav('architecture')}</Link>
           <Link href="/about" prefetch={false} className="hover:text-[#FFD400] transition-colors">{tNav('about')}</Link>
+          <Link href="/corporate" prefetch={false} className="hover:text-[#FFD400] transition-colors">Corporate</Link>
           <Link href="/pricing" prefetch={false} className="hover:text-[#FFD400] transition-colors">{tNav('pricing')}</Link>
           <Link href="/contact" prefetch={false} className="hover:text-[#FFD400] transition-colors">{tNav('contact')}</Link>
           <Link href="/blog" prefetch={false} className="hover:text-[#FFD400] transition-colors">{tNav('blog')}</Link>
@@ -81,6 +82,7 @@ export default function Navbar() {
             <Link href="/#features" prefetch={false} onClick={() => setIsMobileMenuOpen(false)} className="border-b border-[#222] pb-4">{tNav('features')}</Link>
             <Link href="/#architecture" prefetch={false} onClick={() => setIsMobileMenuOpen(false)} className="border-b border-[#222] pb-4">{tNav('architecture')}</Link>
             <Link href="/about" prefetch={false} onClick={() => setIsMobileMenuOpen(false)} className="border-b border-[#222] pb-4">{tNav('about')}</Link>
+            <Link href="/corporate" prefetch={false} onClick={() => setIsMobileMenuOpen(false)} className="border-b border-[#222] pb-4">Corporate</Link>
             <Link href="/pricing" prefetch={false} onClick={() => setIsMobileMenuOpen(false)} className="border-b border-[#222] pb-4">{tNav('pricing')}</Link>
             <Link href="/contact" prefetch={false} onClick={() => setIsMobileMenuOpen(false)} className="border-b border-[#222] pb-4">{tNav('contact')}</Link>
             <Link href="/blog" prefetch={false} onClick={() => setIsMobileMenuOpen(false)} className="border-b border-[#222] pb-4">{tNav('blog')}</Link>

@@ -25,7 +25,7 @@ export default function Home() {
   const tCta = useTranslations('CTA');
   
   return (
-    <main className="flex flex-col w-full min-h-screen font-sans">
+    <main className="flex flex-col w-full min-h-screen font-sans overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative w-full pt-32 pb-24 md:pt-48 md:pb-32 px-6 flex flex-col items-center justify-center text-center overflow-hidden min-h-[90vh]">
         {/* Video Background */}
@@ -91,9 +91,9 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center overflow-hidden">
             {/* Animated Visualization (Smart/Hacker Edition) */}
-            <div className="relative w-full max-w-lg mx-auto aspect-square flex items-center justify-center group">
+            <div className="relative w-full max-w-[300px] sm:max-w-md lg:max-w-lg mx-auto aspect-square flex items-center justify-center group overflow-visible">
               {/* Radar Sweep Effect */}
               <div className="absolute inset-0 rounded-full overflow-hidden opacity-30">
                 <div className="absolute top-1/2 left-1/2 w-full h-[2px] bg-gradient-to-r from-transparent via-[#cca900] to-transparent origin-left animate-spin" style={{ animationDuration: '6s' }}></div>

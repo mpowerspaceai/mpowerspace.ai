@@ -31,7 +31,7 @@ export async function POST(req: Request) {
       }
 
       // Create the recurring $22/month subscription
-      await mollieClient.customers_subscriptions.create({
+      await mollieClient.customerSubscriptions.create({
         customerId: payment.customerId,
         amount: {
           currency: 'USD',
@@ -43,6 +43,32 @@ export async function POST(req: Request) {
       });
 
       console.log(`[SUCCESS] Created $22 Monthly Subscription for Customer: ${payment.customerId} | Trial: ${isTrial}`);
+
+      // NEW: Hacker Auto-Provisioning in FusionPBX
+      // Extract the phone number/extension from the customer metadata or email
+      // We will assume the user's phone number is stored in the customer object or metadata
+      // For now, we will generate a random 4-digit extension if not provided
+      const userPhone = (payment.metadata as any)?.phone || Math.floor(1000 + Math.random() * 9000).toString();
+      const sipPassword = Math.random().toString(36).slice(-8) + 'M@'; // Strong password
+
+      try {
+        const pbxResponse = await fetch('https://calls.mpowerspace.ai/mpower_provision.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: new URLSearchParams({
+            secret: 'BelalMaher100@@',
+            extension: userPhone,
+            password: sipPassword
+          })
+        });
+        
+        const pbxResult = await pbxResponse.json();
+        console.log('[SUCCESS] FusionPBX Provisioning:', pbxResult);
+      } catch (pbxError) {
+        console.error('[ERROR] FusionPBX Provisioning Failed:', pbxError);
+      }
     }
 
     return new NextResponse('OK', { status: 200 });

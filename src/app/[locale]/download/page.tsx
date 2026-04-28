@@ -1,8 +1,39 @@
+"use client";
+
 import { Smartphone, Download, ShieldCheck, Apple, CheckCircle2, Monitor, Tablet, Laptop, Share, PlusSquare } from "lucide-react";
 import Image from "next/image";
 import IOSInstallModal from "@/components/download/IOSInstallModal";
+import { useState, useEffect } from "react";
 
 export default function DownloadPage() {
+  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
+
+  useEffect(() => {
+    const handleBeforeInstallPrompt = (e: any) => {
+      e.preventDefault();
+      setDeferredPrompt(e);
+    };
+
+    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+
+    return () => {
+      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    };
+  }, []);
+
+  const handleInstallClick = async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      if (outcome === 'accepted') {
+        setDeferredPrompt(null);
+      }
+    } else {
+      // Fallback if not available or already installed
+      window.location.href = '/app/';
+    }
+  };
+
   return (
     <main className="flex flex-col w-full min-h-screen font-sans bg-black text-white pt-32 px-6 pb-32">
       <div className="max-w-6xl mx-auto w-full text-center">
@@ -19,6 +50,17 @@ export default function DownloadPage() {
           Get the ultimate secure communication app for your device. Military-grade encryption, zero-compute architecture, and high-quality voice & video calls.
         </p>
 
+        {/* PWA Install Button (Main Call to Action) */}
+        <div className="flex justify-center mb-16">
+          <button 
+            onClick={handleInstallClick}
+            className="flex items-center gap-3 bg-[#cca900] text-black px-10 py-5 rounded-full text-xl font-bold shadow-[0_0_30px_rgba(204,169,0,0.3)] hover:bg-[#b39500] hover:scale-105 transition-all"
+          >
+            <Download className="w-6 h-6" />
+            Install App (Fullscreen)
+          </button>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Android Download */}
           <div className="flex flex-col p-8 rounded-3xl bg-[#0A0A0A] border border-[#222] hover:border-[#cca900]/50 transition-colors items-center text-center group">
@@ -34,10 +76,10 @@ export default function DownloadPage() {
               <li className="flex items-center gap-2 text-sm text-gray-300"><CheckCircle2 size={16} className="text-[#cca900]"/> Full encryption support</li>
             </ul>
 
-            <a href="/app/" className="w-full py-4 rounded-xl bg-[#cca900] text-black font-bold text-lg hover:bg-[#b39500] transition-colors flex items-center justify-center gap-2 mt-auto shadow-[0_0_20px_rgba(204,169,0,0.2)]">
+            <button onClick={handleInstallClick} className="w-full py-4 rounded-xl bg-[#cca900] text-black font-bold text-lg hover:bg-[#b39500] transition-colors flex items-center justify-center gap-2 mt-auto shadow-[0_0_20px_rgba(204,169,0,0.2)]">
               <Download size={20} />
               Open / Install PWA
-            </a>
+            </button>
           </div>
 
           {/* iOS Download */}

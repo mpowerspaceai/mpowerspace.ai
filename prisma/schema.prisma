@@ -14,6 +14,11 @@ model User {
   email            String   @unique
   name             String?
   phone            String?  @unique
+  logoUrl          String?
+  sipUsername      String?
+  sipPassword      String?
+  sipDomain        String?
+  sipWssUrl        String?
   
   // Client Info
   balance          Float    @default(0.0)
@@ -33,6 +38,8 @@ model User {
   
   payments         Payment[]
   callLogs         CallLog[]
+  smsLogs          SmsLog[]
+  voiceRecordings  VoiceRecording[]
 }
 
 model CallLog {
@@ -54,6 +61,33 @@ model CallLog {
   
   startedAt        DateTime @default(now())
   endedAt          DateTime?
+  voiceRecordings  VoiceRecording[]
+}
+
+model SmsLog {
+  id                String   @id @default(cuid())
+  userId            String
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  direction         String   @default("outbound") // outbound | inbound
+  fromNumber        String
+  toNumber          String
+  body              String
+  status            String   @default("queued")
+  providerMessageId String?  @unique
+  createdAt         DateTime @default(now())
+}
+
+model VoiceRecording {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  callLogId    String?
+  callLog      CallLog? @relation(fields: [callLogId], references: [id], onDelete: SetNull)
+  fileUrl      String
+  durationSec  Int      @default(0)
+  mimeType     String?
+  sizeBytes    Int?
+  createdAt    DateTime @default(now())
 }
 
 model Payment {
@@ -67,4 +101,14 @@ model Payment {
   transactionId    String?  @unique
   
   createdAt        DateTime @default(now())
+}
+
+model BusinessPlanRequest {
+  id               String   @id @default(cuid())
+  email            String
+  phone            String
+  companyWebsite   String?
+  status           String   @default("Pending") // Pending, Contacted, Rejected
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
 }

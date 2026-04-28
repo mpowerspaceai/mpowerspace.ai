@@ -18,7 +18,7 @@ export default function AffiliatePage() {
         </h1>
         
         <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-12">
-          Join our official FirstPromoter affiliate program. Track your referrals in real-time, get lifetime attribution, and earn recurring commissions on every secure call plan you sell.
+          Join our official Post Affiliate Pro program. Track your referrals in real-time, get lifetime attribution, and earn recurring commissions on every secure call plan you sell.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
@@ -30,17 +30,17 @@ export default function AffiliatePage() {
           <div className="p-8 rounded-3xl bg-[#0A0A0A] border border-[#222] text-left">
             <LinkIcon size={32} className="text-[#cca900] mb-4" />
             <h3 className="text-2xl font-bold mb-2">Official Portal</h3>
-            <p className="text-gray-400">Access your links, track conversions, and set up your PayPal or Bank payouts directly via our secure FirstPromoter dashboard.</p>
+            <p className="text-gray-400">Access your links, track conversions, and set up your payouts directly via our secure Post Affiliate Pro dashboard.</p>
           </div>
         </div>
 
-        {/* Real Integration Link - Using FirstPromoter Portal */}
+        {/* Real Integration Link - Using Post Affiliate Pro Portal */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="https://mpowerspace.firstpromoter.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-[#cca900] text-black px-10 py-5 rounded-xl font-bold text-lg hover:bg-[#b39500] transition-colors border border-[#cca900] w-full sm:w-auto shadow-[0_0_30px_rgba(204,169,0,0.2)]">
+          <a href="https://mpowerspace.postaffiliatepro.com/affiliates/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-[#cca900] text-black px-10 py-5 rounded-xl font-bold text-lg hover:bg-[#b39500] transition-colors border border-[#cca900] w-full sm:w-auto shadow-[0_0_30px_rgba(204,169,0,0.2)]">
             <LogIn size={20} />
             Login to Affiliate Portal
           </a>
-          <a href="https://mpowerspace.firstpromoter.com/join" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-black text-[#cca900] px-10 py-5 rounded-xl font-bold text-lg hover:bg-[#111] transition-colors border border-[#cca900] w-full sm:w-auto">
+          <a href="https://mpowerspace.postaffiliatepro.com/affiliates/signup.php" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-black text-[#cca900] px-10 py-5 rounded-xl font-bold text-lg hover:bg-[#111] transition-colors border border-[#cca900] w-full sm:w-auto">
             Become a Partner <ArrowRight size={20} className="rtl:rotate-180" />
           </a>
         </div>

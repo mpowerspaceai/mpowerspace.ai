@@ -1,12 +1,24 @@
 import { NextResponse } from 'next/server';
 import { createMollieClient, SequenceType } from '@mollie/api-client';
 
-const mollieClient = createMollieClient({ apiKey: process.env.MOLLIE_API_KEY || 'live_ADU7D43kyDthpBRRCaWR7Srk6b2Exp' });
-
 export async function POST(req: Request) {
   try {
+    const apiKey = process.env.MOLLIE_API_KEY;
+    if (!apiKey) {
+      return NextResponse.json({ error: 'MOLLIE_API_KEY is missing on server' }, { status: 500 });
+    }
+    const mollieClient = createMollieClient({ apiKey });
+
     const body = await req.json();
-    const { amount, currency = 'USD', description = 'Mpower Space Monthly Subscription', isSubscription = true, coupon } = body;
+    const {
+      amount,
+      currency = 'USD',
+      description = 'Mpower Space Monthly Subscription',
+      isSubscription = true,
+      coupon,
+      customerEmail,
+      customerName
+    } = body;
 
     let finalAmount = Number(amount);
     let finalDescription = description;
@@ -25,12 +37,20 @@ export async function POST(req: Request) {
     const formattedAmount = finalAmount.toFixed(2);
 
     // Create a Mollie customer to attach the recurring mandate to
+    const email = typeof customerEmail === 'string' && customerEmail.includes('@')
+      ? customerEmail
+      : `client_${Date.now()}@mpowerspace.ai`;
+    const name = typeof customerName === 'string' && customerName.trim()
+      ? customerName.trim()
+      : 'Mpower Space User';
+
     const customer = await mollieClient.customers.create({
-      name: 'Mpower Space User',
-      email: 'user@mpowerspace.ai', // Ideally we pass this from the frontend
+      name,
+      email
     });
 
     // Create a first payment to initialize the mandate for future recurring payments
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://mpowerspace.ai';
     const payment = await mollieClient.payments.create({
       amount: {
         currency: currency,
@@ -38,8 +58,8 @@ export async function POST(req: Request) {
       },
       customerId: customer.id,
       description: `${finalDescription} - ${currency} ${formattedAmount}`,
-      redirectUrl: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://mpowerspace.ai'}/app/`,
-      webhookUrl: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://mpowerspace.ai'}/api/webhooks/mollie`,
+      redirectUrl: `${baseUrl}/app/?payment=return`,
+      webhookUrl: `${baseUrl}/api/webhooks/mollie`,
       sequenceType: isSubscription ? SequenceType.first : SequenceType.oneoff,
       metadata: {
         isTrial: finalAmount === 1.00,

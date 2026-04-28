@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { validateWebhookSignature } from '@/lib/firstpromoter';
+import { validateWebhookSignature } from '@/lib/postaffiliatepro';
 
 export async function POST(req: NextRequest) {
   try {
@@ -14,30 +14,11 @@ export async function POST(req: NextRequest) {
     }
 
     const payload = JSON.parse(rawBody);
-
-    console.log('Received Affiliate Webhook:', payload.type || payload.event || 'unknown');
-
-    switch (payload.type) {
-      case 'affiliate.created':
-      case 'promoter.created':
-        break;
-      
-      case 'reward.created':
-      case 'commission.created':
-        // Affiliate earned a commission!
-        break;
-        
-      case 'payout.paid':
-      case 'payout.completed':
-        break;
-
-      default:
-        console.log('Unhandled affiliate event type:', payload.type || payload.event);
-    }
+    console.log('Received Post Affiliate Pro webhook:', payload.type || payload.event || 'unknown');
 
     return NextResponse.json({ received: true });
   } catch (error) {
-    console.error('Webhook error:', error);
+    console.error('Post Affiliate Pro webhook error:', error);
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }
