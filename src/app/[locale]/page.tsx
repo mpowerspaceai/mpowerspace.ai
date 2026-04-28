@@ -1,22 +1,6 @@
-"use client";
-
-import { ArrowRight, ShieldCheck, Zap, Globe, Smartphone, Lock, Coins, Building, Menu, X } from "lucide-react";
-import Image from "next/image";
-import {useTranslations, useLocale} from 'next-intl';
+import { ArrowRight, ShieldCheck, Zap, Globe, Smartphone, Lock, Coins, Building } from "lucide-react";
+import {useTranslations} from 'next-intl';
 import {Link} from '@/i18n/routing';
-import { useState } from "react";
-
-const locales = [
-  { code: 'en', name: 'English' },
-  { code: 'ar', name: 'العربية' },
-  { code: 'he', name: 'עבריت' },
-  { code: 'es', name: 'Español' },
-  { code: 'ro', name: 'Română' },
-  { code: 'pt', name: 'Português' },
-  { code: 'fr', name: 'Français' },
-  { code: 'de', name: 'Deutsch' },
-  { code: 'zh', name: '中文' }
-];
 
 export default function Home() {
   const tHero = useTranslations('Hero');
@@ -28,19 +12,10 @@ export default function Home() {
     <main className="flex flex-col w-full min-h-screen font-sans overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative w-full pt-32 pb-24 md:pt-48 md:pb-32 px-6 flex flex-col items-center justify-center text-center overflow-hidden min-h-[90vh]">
-        {/* Video Background */}
+        {/* Lightweight background to avoid loading a heavy hero video on first paint */}
         <div className="absolute inset-0 w-full h-full z-0">
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
-            className="object-cover w-full h-full opacity-40 mix-blend-screen"
-          >
-            <source src="/banner-bg.mp4" type="video/mp4" />
-          </video>
-          {/* Gradient Overlay to ensure text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-[#0A0A0A]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(204,169,0,0.20),_rgba(0,0,0,0.95)_55%)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-[#0A0A0A]" />
         </div>
 
         {/* Content */}
